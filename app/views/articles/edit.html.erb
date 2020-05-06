@@ -1,27 +1,18 @@
-<h1>Edit an article</h1>
+  <div class="container">
+    <%= render  "shared/errors" %>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow md-5 bg-white rounded">
+          <div class="card-header">
+            <h3>Edit an article</h3>
 
-<% if @article.errors.any? %>
-<h2>Check the following errors</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-  <li> <%= msg %> </li>
-  <% end %>
-</ul>
-<% end %>
+          </div>
+          <div class="card-body">
 
-<%= form_with(model: @article, local: true) do |f|%>
-<p>
-  <%= f.label :title %> <br />
-  <%= f.text_field :title %>
-</p>
+            <%= render 'form' %>
 
-<p>
-  <%= f.label :description %><br />
-  <%= f.text_area :description %>
-</p>
-
-<p>
-  <%= f.submit %><br />
-</p>
-
-<% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
